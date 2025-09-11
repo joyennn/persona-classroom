@@ -415,8 +415,10 @@ async def chat(req: ChatRequest):
         # 나머지: 게이트웨이 오류로 반환(원인 노출)
         raise HTTPException(status_code=502, detail=f"모델 호출 실패: {e}")
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
 
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 8000))  # Render가 PORT를 넣어줌
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
 
 

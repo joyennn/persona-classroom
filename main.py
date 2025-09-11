@@ -422,5 +422,5 @@ async def chat(req: ChatRequest):
 
 if __name__ == "__main__":
     # Render는 PORT 환경변수를 제공하므로 반드시 0.0.0.0:$PORT 로 바인딩
-    port = int(os.environ.get("PORT", 8000))  # 로컬: 8000
+    port = int(os.environ.get("PORT", 10000))  # 로컬: 8000
     uvicorn.run("main:app", host="0.0.0.0", port=port)
